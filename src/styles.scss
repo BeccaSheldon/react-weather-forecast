@@ -1,0 +1,90 @@
+* {
+  box-sizing: border-box;
+}
+
+html, body {
+	font-family: 'Lato', sans-serif;
+	height: 100%;
+	padding: 0 2%;
+}
+
+body {
+	display: flex;
+	flex-direction: column;
+}
+
+a {
+	color: #49D1F9;
+	cursor: pointer;
+	text-decoration: none;
+}
+
+a:hover {
+	color: #F57C00;
+	animation: pulse 1s linear infinite;
+}
+
+ul li {
+	display: inline-block;
+	list-style: none;
+	padding: 1rem;
+}
+
+.App {
+	flex: 1 0 auto;
+	.Row {
+		flex: 1 100%;
+		margin-top: 1rem;
+	}
+	.Search {
+		text-align: center;
+		.Search-input,
+		.Search-button {
+			border: 1px solid #5BC0DE;
+			border-radius: 2rem;
+			color: #FF8F12;
+			font-size: 16px;
+			height: 3rem;
+			padding: 0 2rem;
+			width: 80%;
+			&:focus {
+				outline: none;
+			}
+		}
+		.Search-button {
+			background-color: #FFFFFF;
+			color: #5BC0DE;
+			cursor: pointer;
+			height: 3rem;
+			padding: 0;
+			width: 5%;
+			&:hover {
+				color: #F57C00;
+				animation: pulse 1s linear infinite;
+			}
+		}
+	}
+
+	.Result-item {
+		border: 1px solid #539199;
+	}
+
+	@keyframes pulse {
+	  25% {color: #FF8F12;}
+		75% {color: #FFB364;}
+	}
+
+	@keyframes spin {
+		100% {transform: rotate(360deg);}
+	}
+
+	@keyframes bounce {
+	 from {transform: translateY(0px);}
+	 to {transform: translateY(-15px);}
+	}
+}
+
+
+
+
+
