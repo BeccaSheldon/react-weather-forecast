@@ -1,15 +1,12 @@
-import React, {Component} from 'react';
+import React from 'react'
 
-export default class Input extends Component {
-	render() {
-	  return (
-	  	<input
-	    	className={this.props.className}
-	  		name="city"
-	  		onChange={this.props.changeHandler}
-	  		type={this.props.type}
-	  		value={this.props.value}
-	  	/>
-	  )
-	}
+export default function Input({className, changeHandler, type, value}) {
+  return (
+  	<input
+    	className={className}
+  		onChange={changeHandler}
+  		type={type}
+  		value={value}
+  	/>
+  )
 }

@@ -1,7 +1,6 @@
 import React, {Component} from 'react'
 import Search from './Search.jsx'
 import ResultList from './ResultList.jsx'
-import Api from './Api.jsx'
 
 export default class Forecast extends Component {
 	constructor(props) {
@@ -17,7 +16,7 @@ export default class Forecast extends Component {
     if(this.state.city !== '') {
   		let key = 'APPID=b2139d07e99d08bc22c314f37e836e7d'
   		let api = 'http://api.openweathermap.org/data/2.5/forecast?'
-  		let url = `${api}&id=${this.state.city}&${key}`
+  		let url = `${api}&q=${this.state.city},US&cnt=3&${key}`
 
   	  fetch(url)
   	  .then(result => result.json())
@@ -50,4 +49,3 @@ export default class Forecast extends Component {
 		)
 	}
 }
-

@@ -5,7 +5,7 @@ export default class NavHeader extends Component {
 	render() {
 		return (
 			<div className="Row">
-				<ul>
+				<ul className="Navbar-items">
 					<li>
 						<Link
 							className="pulse"

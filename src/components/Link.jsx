@@ -1,4 +1,4 @@
-import React from 'react';
+import React from 'react'
 
 export default function Link({ className, target, text, url }) {
   return (
