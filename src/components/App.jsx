@@ -1,5 +1,5 @@
 import React, {Component} from 'react'
-import Forecast from './Forecast.jsx'
+import Start from './Start.jsx'
 import NavFooter from './NavFooter.jsx'
 import NavHeader from './NavHeader.jsx'
 
@@ -9,7 +9,7 @@ export default class App extends Component {
 			<div className="App">
 				<div className="Wrapper">
 					<NavHeader />
-					<Forecast />
+					<Start />
 				</div>
 				<NavFooter />
 			</div>

@@ -1,6 +1,5 @@
 import React, {Component} from 'react'
 import Search from './Search.jsx'
-import Raindrops from './Raindrops.jsx'
 import ResultList from './ResultList.jsx'
 
 export default class Forecast extends Component {
@@ -35,7 +34,6 @@ export default class Forecast extends Component {
 	render() {
 		return(
 			<div>
-        <Raindrops/>
 				<Search
 					changeHandler={this.handleChange.bind(this)}
 					clickHandler={this.handleSubmit.bind(this)}
