@@ -163,6 +163,10 @@ p {
 		}
 	}
 
+	.Header .Navbar-items {
+		justify-content: flex-end;
+	}
+
 	.Footer .Navbar-items {
 		flex-flow: initial;
 	}
