@@ -17,8 +17,8 @@ export default class Forecast extends Component {
 	handleSubmit() {
     if(this.state.city !== '') {
   		let key = 'APPID=b2139d07e99d08bc22c314f37e836e7d'
-  		let api = 'http://api.openweathermap.org/data/2.5/forecast?'
-  		let url = `${api}&q=${this.state.city},US&cnt=3&${key}`
+  		let api = 'http://api.openweathermap.org/data/2.5/forecast/daily?'
+  		let url = `${api}&q=${this.state.city},US&units=imperial&${key}`
   	  fetch(url)
   	  .then(result => result.json())
   	  .then((data) => {
