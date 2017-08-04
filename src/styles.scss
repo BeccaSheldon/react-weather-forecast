@@ -1,8 +1,8 @@
-$primary: #13C8B5;
-$secondary:#2B364A;
-$tertiary: #FFF1A3;
+$primary: #21A3A3;
+$secondary:#04508E;
+$tertiary: #FC8F8A;
 $white: #FFFFFF;
-$blue: #49D1F9;
+$blue: #C6DEFF;
 
 * {
   box-sizing: border-box;
@@ -15,52 +15,45 @@ html, body {
 }
 
 body {
+	background-color: $secondary;
 	display: flex;
 	flex-direction: column;
 }
 
 a {
-	color: $primary;
+	color: $blue;
 	cursor: pointer;
 	text-decoration: none;
+
+	&:hover {
+		color: $tertiary;
+		animation: pulse 1s linear infinite;
+	}
 }
 
-a:hover {
-	color: $tertiary;
-	animation: pulse 1s linear infinite;
+h1, h2, h3, h4 p {
+	font-weight: 300;
+  text-align: center;
+}
+
+h1, h2, h3, h4 {
+	color: $white;
 }
 
 ul {
 	padding: 0;
-}
 
-ul li {
-	display: inline-block;
-	list-style: none;
-	padding: 1rem;
-}
-
-.Box {
-  width: 150px;
-  height: 150px;
-  background: #90CAF9;
-  text-align: center;
-  line-height: 150px;
-  font-size: 60px;
-  color: #0D47A1;
-  border: 1px solid #0D47A1;
-  margin: 10px auto;
-  cursor: pointer;
-}
-
-p {
-  text-align: center;
+	li {
+		display: inline-block;
+		list-style: none;
+		padding: 1rem;
+	}
 }
 
 .App {
 	.Wrapper {
 		flex: 1 0 auto;
-		height: 80vh;
+		// height: 80vh;
 	}
 
 	.Row {
@@ -68,17 +61,29 @@ p {
 		margin-top: 1rem;
 	}
 
+	.Loading {
+		display: flex;
+		flex-direction: row;
+		justify-content: space-around;
+		height: 6rem;
+	}
+
+	.Weather-details {
+		text-align: center;
+	}
+
 	.Search {
 		text-align: center;
 
 		.Search-input,
 		.Search-button {
-			border: 1px solid $secondary;
+			border: 1px solid $primary;
 			border-radius: 2rem;
-			color: $primary;
+			color: $tertiary;
 			font-size: 16px;
 			height: 3rem;
 			padding: 0 2rem;
+			width: 50%;
 
 			&:focus {
 				outline: none;
@@ -87,14 +92,15 @@ p {
 
 		.Search-button {
 			background-color: $white;
-			color: $secondary;
+			color: $tertiary;
 			cursor: pointer;
 			height: 3rem;
 			padding: 0;
 			width: 5%;
 
 			&:hover {
-				color: $tertiary;
+				background-color: $tertiary;
+				color: $white;
 				animation: pulse 1s linear infinite;
 			}
 		}
@@ -106,6 +112,11 @@ p {
 		flex-shrink: 1;
 		justify-content: space-around;
 
+		h2 {
+			width: 100%;
+		}
+
+		// Results displayed as cards
 		.Result-item {
 			background-color: $white;
 			border: 1px solid $primary;
@@ -142,6 +153,31 @@ p {
 		.Result-item-row {
 			width: 50%;
 		}
+
+		// Results displayed as table
+		.Result-table {
+			background-color: $white;
+			border: 1px solid $primary;
+			border-radius: 1rem;
+			box-shadow: 0 1px 1px $secondary;
+			text-align: center;
+			vertical-align: middle;
+
+			.Result-row {
+				&:hover {
+					// animation: bounce 0.25s 4 alternate;
+					border-radius: 0.5rem;
+					box-shadow: 0 3px 10px 6px #CCF3FF,
+											0 3px 10px 6px #CCF3FF;
+				}
+			}
+
+			.Result-header,
+			.Result-cell {
+				padding: 0.5rem;
+				width: 10rem;
+			}
+		}
 	}
 
 	.Navbar-items {
@@ -171,7 +207,28 @@ p {
 		flex-flow: initial;
 	}
 
+	.Cloud {
+		animation: 3s linear cloud infinite;
+	}
 
+	.Rain1 {
+		animation: 8s linear rain1 infinite;
+	}
+
+	.Rain2 {
+		animation: 8s linear rain2 infinite;
+		animation-delay: 0.25s;
+	}
+
+	.Sun {
+		animation: 9s linear sun infinite;
+	}
+
+	.Sun line {
+		animation: 2s shine linear infinite;
+	}
+
+	// ANIMATION KEYFRAMES
 	@keyframes pulse {
 	  25% {color: $primary;}
 		75% {color: $tertiary;}
@@ -185,4 +242,45 @@ p {
 	 from {transform: translateY(0px);}
 	 to {transform: translateY(-15px);}
 	}
+
+	@keyframes cloud {
+	  0% {transform: translate(0px,0px);}
+	  50% {transform: translate(2px,0px);}
+	  100% {transform: translate(0px,0px);}
+	}
+
+	@keyframes rain1 {
+		0% {stroke-dashoffset: 0;}
+  	100% {stroke-dashoffset: -100;}
+  }
+
+	@keyframes rain2 {
+		0% {stroke-dashoffset: 0;}
+  	100% {stroke-dashoffset: -100;}
+  }
+
+	@keyframes sun {
+	  0% {transform: rotate(0deg);}
+	  100% {transform: rotate(360deg);}
+	}
+
+	@keyframes shine {
+	  0% {
+	    stroke-dasharray: 3px 10px;
+	    stroke-dashoffset: 0px;
+	  }
+	  50% {
+	    stroke-dasharray: 0.1px 10px;
+	    stroke-dashoffset: -1px;
+	  }
+	  100% {
+	    stroke-dasharray: 3px 10px;
+	    stroke-dashoffset: 0px;
+	  }
+	}
 }
+
+
+
+
+

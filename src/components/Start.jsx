@@ -9,32 +9,46 @@ export default class Start extends Component {
 			currentCity: '',
 			currentCondition: '',
 			currentTemperature: '',
-	    weatherIcon: '',
-	    loading: true
+			lat: '',
+	    loading: true,
+	    lon: '',
+	    icon: ''
 		}
 	}
 
-	start() {
+	getUserLocation() {
 		navigator.geolocation.getCurrentPosition((position) => {
-			let key = 'APPID=b2139d07e99d08bc22c314f37e836e7d'
-			let api = 'http://api.openweathermap.org/data/2.5/weather?'
-			let lat = position.coords.latitude
-			let lon = position.coords.longitude
-			let url = `${api}&lat=${lat}&lon=${lon}&units=imperial&${key}`
-
-			fetch(url)
-		  .then(result => result.json())
-		  .then((data) => {
-	    	this.setState({
-	    		currentCity: data.name,
-	    		currentCondition: data.weather[0].description,
-	    		currentTemperature: Math.round(data.main.temp),
-	    		weatherIcon: data.weather[0].icon,
-	    		loading: false
-	    	})
-		  })
-	  	.catch(err => new Error(console.log('Hit a snag: ' + err)))
+			this.setState({
+				lat: position.coords.latitude,
+				lon: position.coords.longitude
+			})
 		})
+	}
+
+	makeUrl() {
+		let key = 'APPID=b2139d07e99d08bc22c314f37e836e7d'
+		let api = 'http://api.openweathermap.org/data/2.5/weather?'
+		let url = `${api}&q='sanfrancisco'&units=imperial&${key}`
+
+		this.state.lat !== '' ? url = `${api}&lat=${this.state.lat}&lon=${this.state.lon}&units=imperial&${key}` : url
+		return url
+	}
+
+	start() {
+		this.getUserLocation()
+		let url = this.makeUrl()
+		fetch(url)
+	  .then(result => result.json())
+	  .then((data) => {
+    	this.setState({
+    		currentCity: data.name,
+    		currentCondition: data.weather[0].description,
+    		currentTemperature: Math.round(data.main.temp),
+    		icon: data.weather[0].icon,
+    		loading: false
+    	})
+	  })
+  	.catch(err => new Error(console.log('Hit a snag: ' + err)))
 	}
 
 	componentDidMount() {
@@ -48,7 +62,8 @@ export default class Start extends Component {
 					currentCity: this.state.currentCity,
 					currentCondition: this.state.currentCondition,
 					currentTemperature: this.state.currentTemperature,
-					loading: this.state.loading
+					loading: this.state.loading,
+					icon: this.state.icon
 			  }} />
 			</Row>
   	)

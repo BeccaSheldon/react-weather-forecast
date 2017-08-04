@@ -8,17 +8,17 @@
     height="64"
     viewbox="0 0 64 64">
     <defs>
-        <filter id="blur" width="200%" height="200%">
-            <feGaussianBlur in="SourceAlpha" stdDeviation="3"/>
-            <feOffset dx="0" dy="4" result="offsetblur"/>
-            <feComponentTransfer>
-                <feFuncA type="linear" slope="0.05"/>
-            </feComponentTransfer>
-            <feMerge> 
-                <feMergeNode/>
-                <feMergeNode in="SourceGraphic"/> 
-            </feMerge>
-        </filter>
+<filter id="blur" width="200%" height="200%">
+<feGaussianBlur in="SourceAlpha" stdDeviation="3"/>
+<feOffset dx="0" dy="4" result="offsetblur"/>
+<feComponentTransfer>
+<feFuncA type="linear" slope="0.05"/>
+</feComponentTransfer>
+<feMerge>
+<feMergeNode/>
+<feMergeNode in="SourceGraphic"/>
+</feMerge>
+</filter>
         <style type="text/css"><![CDATA[
 /*
 ** SUN
@@ -111,6 +111,8 @@
      -moz-animation-iteration-count: infinite;
       -ms-animation-iteration-count: infinite;
           animation-iteration-count: infinite;
+
+
 }
         ]]></style>
     </defs>

@@ -13,6 +13,7 @@ export default class ResultList extends Component {
 	render() {
 		return(
 			<Row className="Results">
+				{this.props.results.length > 0 && <h3>7 Day Forecast</h3>}
 				{this.props.results.map((result, index) => (
 					<ResultItem {...{
 						date: this.formatDate(result.dt),
