@@ -1,7 +1,7 @@
 import React, {Component} from 'react'
 import DateFormat from 'dateformat'
 import ResultRow from './ResultRow.jsx'
-import Row from './Row.jsx'
+import Row from '../layout/Row.jsx'
 
 export default class ResultTable extends Component {
 	formatDate(unixTimestamp) {

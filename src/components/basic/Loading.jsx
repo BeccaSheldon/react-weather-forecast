@@ -1,6 +1,6 @@
 import React from 'react'
 import Spinner from 'react-spinkit'
-import Row from './Row.jsx'
+import Row from '../layout/Row.jsx'
 
 export default function Loading({}) {
 	return(

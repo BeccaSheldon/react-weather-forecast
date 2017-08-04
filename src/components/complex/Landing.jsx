@@ -1,8 +1,7 @@
 import React, {Component} from 'react'
 import IconFinder from './IconFinder.jsx'
-import Loading from './Loading.jsx'
-import RainyIcon from './RainyIcon.jsx'
-import Row from './Row.jsx'
+import Loading from '../basic/Loading.jsx'
+import Row from '../layout/Row.jsx'
 
 export default class Landing extends Component {
 	render() {

@@ -1,6 +1,6 @@
 import React, {Component} from 'react'
 import Landing from './Landing.jsx'
-import Row from './Row.jsx'
+import Row from '../layout/Row.jsx'
 
 export default class Start extends Component {
 	constructor(props) {

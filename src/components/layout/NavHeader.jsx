@@ -1,5 +1,5 @@
 import React, {Component} from 'react'
-import Link from './Link.jsx'
+import Link from '../basic/Link.jsx'
 import Row from './Row.jsx'
 
 export default class NavHeader extends Component {
