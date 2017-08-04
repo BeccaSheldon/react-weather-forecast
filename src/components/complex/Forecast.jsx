@@ -13,10 +13,6 @@ export default class Forecast extends Component {
 		}
 	}
 
-	clearInput() {
-		console.log("How do we clear inputs in React?")
-	}
-
 	isValidQuery() {
 		return this.state.city !== '' && this.sate.city !== ' ' && this.state.city !== undefined ? true : false
 	}
@@ -32,33 +28,29 @@ export default class Forecast extends Component {
 				loading: false,
 				results: JSON.parse(cachedCity)
 			})
-		}
+		} else {
+			// If city isn't cached, fetch it and add it to localStorage
+	    if (this.isValidQuery) {
+	  		let apikey = 'APPID=b2139d07e99d08bc22c314f37e836e7d'
+	  		let api = 'http://api.openweathermap.org/data/2.5/forecast/daily?'
+	  		let url = `${api}&q=${this.state.city},US&units=imperial&${apikey}`
 
-		// If city isn't in cache, fetch it + add to localstorage
-    if (this.isValidQuery) {
-  		let apikey = 'APPID=b2139d07e99d08bc22c314f37e836e7d'
-  		let api = 'http://api.openweathermap.org/data/2.5/forecast/daily?'
-  		let url = `${api}&q=${this.state.city},US&units=imperial&${apikey}`
-  	  fetch(url)
-  	  .then(result => result.json())
-  	  .then((data) => {
-      	this.setState({
-      		loading: false,
-      		results: data.list
-      	})
-      	localStorage.setItem(this.state.city, JSON.stringify(this.state.results))
-      	this.clearInput()
-  	  })
-  	  .catch(err => new Error(console.log('Hit a snag: ' + err)))
-    }
-  }
+	  	  fetch(url)
+	  	  .then(result => result.json())
+	  	  .then((data) => {
+	      	this.setState({
+	      		loading: false,
+	      		results: data.list
+	      	})
+	      	localStorage.setItem(this.state.city, JSON.stringify(this.state.results))
+	  	  })
+	  	  .catch(err => new Error(console.log('Hit a snag: ' + err)))
+	    }
+	  }
+	}
 
 	handleChange(event) {
 	  this.setState({city: event.target.value})
-	}
-
-	unmountLanding() {
-		console.log("How do we teardown Landing so it can be replaced?")
 	}
 
 	render() {

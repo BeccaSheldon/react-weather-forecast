@@ -29,9 +29,8 @@ export default class Start extends Component {
 		let key = 'APPID=b2139d07e99d08bc22c314f37e836e7d'
 		let api = 'http://api.openweathermap.org/data/2.5/weather?'
 		let url = `${api}&q='sanfrancisco'&units=imperial&${key}`
-
-		this.state.lat !== '' ? url = `${api}&lat=${this.state.lat}&lon=${this.state.lon}&units=imperial&${key}` : url
-		return url
+		// Fallback if user geolocation fails is San Francisco
+		return this.state.lat !== '' ? url = `${api}&lat=${this.state.lat}&lon=${this.state.lon}&units=imperial&${key}` : url
 	}
 
 	start() {

@@ -7,7 +7,7 @@ import VeryCloudyIcon from '../icons/VeryCloudyIcon.jsx'
 export default class IconFinder extends Component {
 	render() {
 		let getIcon = () => {
-			if (this.props.icon === '01d') {
+			if (this.props.icon === '01d' || this.props.icon === '04d') {
 				return <CloudyIcon />
 			}
 			if (this.props.icon === '03n' || this.props.icon === '04n' || this.props.icon === '03d') {
