@@ -1,8 +1,8 @@
 import React, {Component} from 'react'
-import Forecast from './Forecast.jsx'
-import NavFooter from './NavFooter.jsx'
-import NavHeader from './NavHeader.jsx'
-import Start from './Start.jsx'
+import Forecast from './complex/Forecast.jsx'
+import NavFooter from './layout/NavFooter.jsx'
+import NavHeader from './layout/NavHeader.jsx'
+import Start from './complex/Start.jsx'
 
 export default class App extends Component {
 	render() {

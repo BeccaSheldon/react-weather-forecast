@@ -1,8 +1,8 @@
 import React, {Component} from 'react'
-import CloudyIcon from './CloudyIcon.jsx'
-import RainyIcon from './RainyIcon.jsx'
-import SunnyIcon from './SunnyIcon.jsx'
-import VeryCloudyIcon from './VeryCloudyIcon.jsx'
+import CloudyIcon from '../icons/CloudyIcon.jsx'
+import RainyIcon from '../icons/RainyIcon.jsx'
+import SunnyIcon from '../icons/SunnyIcon.jsx'
+import VeryCloudyIcon from '../icons/VeryCloudyIcon.jsx'
 
 export default class IconFinder extends Component {
 	render() {
@@ -10,7 +10,7 @@ export default class IconFinder extends Component {
 			if (this.props.icon === '01d') {
 				return <CloudyIcon />
 			}
-			if (this.props.icon === '03n') {
+			if (this.props.icon === '03n' || this.props.icon === '04n' || this.props.icon === '03d') {
 				return <VeryCloudyIcon />
 			}
 			if (this.props.icon === '10n' || this.props.icon === '10d') {

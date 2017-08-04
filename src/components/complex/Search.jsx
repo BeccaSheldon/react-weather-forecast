@@ -1,7 +1,7 @@
 import React, {Component} from 'react'
-import Button from './Button.jsx'
-import Input from './Input.jsx'
-import Row from './Row.jsx'
+import Button from '../basic/Button.jsx'
+import Input from '../basic/Input.jsx'
+import Row from '../layout/Row.jsx'
 
 export default class Search extends Component {
 	render() {
@@ -16,7 +16,6 @@ export default class Search extends Component {
 			  <Button
 			    className="Search-button"
 			    clickHandler={this.props.clickHandler}
-			    text="Search"
 			  />
 			</Row>
 		)

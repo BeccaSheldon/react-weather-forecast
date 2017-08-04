@@ -75,8 +75,7 @@ ul {
 	.Search {
 		text-align: center;
 
-		.Search-input,
-		.Search-button {
+		.Search-input {
 			border: 1px solid $primary;
 			border-radius: 2rem;
 			color: $tertiary;
@@ -92,16 +91,16 @@ ul {
 
 		.Search-button {
 			background-color: $white;
+			border: none;
 			color: $tertiary;
 			cursor: pointer;
-			height: 3rem;
+			font-size: 1.2rem;
+			margin-left: -2rem;
 			padding: 0;
-			width: 5%;
 
-			&:hover {
-				background-color: $tertiary;
-				color: $white;
-				animation: pulse 1s linear infinite;
+			i:hover {
+				color: $primary;
+				animation: spin 1s linear 1;
 			}
 		}
 	}

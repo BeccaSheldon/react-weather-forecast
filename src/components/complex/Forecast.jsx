@@ -1,5 +1,5 @@
 import React, {Component} from 'react'
-import Loading from './Loading.jsx'
+import Loading from '../basic/Loading.jsx'
 import ResultTable from './ResultTable.jsx'
 import Search from './Search.jsx'
 
