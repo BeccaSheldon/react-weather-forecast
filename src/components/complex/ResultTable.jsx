@@ -22,7 +22,6 @@ export default class ResultTable extends Component {
 								<th className="Result-header">Condition</th>
 								<th className="Result-header">High</th>
 								<th className="Result-header">Low</th>
-								<th className="Result-header">Humidity</th>
 							</tr>
 						</thead>
 						<tbody>

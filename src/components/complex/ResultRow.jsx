@@ -20,9 +20,6 @@ export default class ResultRow extends Component {
 				<td className="Result-cell">
 					{this.props.min}
 				</td>
-				<td className="Result-cell">
-					{this.props.humidity}
-				</td>
 			</tr>
 		)
 	}
