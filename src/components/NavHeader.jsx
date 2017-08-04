@@ -1,10 +1,11 @@
 import React, {Component} from 'react'
 import Link from './Link.jsx'
+import Row from './Row.jsx'
 
 export default class NavHeader extends Component {
 	render() {
 		return (
-			<div className="Row">
+			<Row className="Header">
 				<ul className="Navbar-items">
 					<li>
 						<Link
@@ -14,15 +15,8 @@ export default class NavHeader extends Component {
 							url="http://github.com/beccasheldon/vanilla-search-ui"
 						></Link>
 					</li>
-					<li>
-					<Link
-						className="pulse"
-						text="Contact"
-						url="mailto:rebecca.e.sheldon@gmail.com"
-					></Link>
-					</li>
 				</ul>
-			</div>
+			</Row>
 		)
 	}
 }

@@ -10,6 +10,7 @@ export default class Search extends Component {
 			  <Input
 			  	changeHandler={this.props.changeHandler}
 			  	className="Search-input"
+			  	placeholder="Type in a city name, like 'San Francisco'"
 			  	type="text"
 			  />
 			  <Button
