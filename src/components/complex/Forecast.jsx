@@ -17,14 +17,28 @@ export default class Forecast extends Component {
 		console.log("How do we clear inputs in React?")
 	}
 
-	handleSubmit() {
-	  this.setState({loading: true})
-	  this.unmountLanding()
+	isValidQuery() {
+		return this.state.city !== '' && this.sate.city !== ' ' && this.state.city !== undefined ? true : false
+	}
 
-    if(this.state.city !== '') {
-  		let key = 'APPID=b2139d07e99d08bc22c314f37e836e7d'
+	handleSubmit() {
+	  let cachedCity = localStorage.getItem(this.state.city)
+
+	  this.setState({loading: true})
+
+	  // Check if results already cached for city for 1 day only
+		if (cachedCity) {
+			this.setState({
+				loading: false,
+				results: JSON.parse(cachedCity)
+			})
+		}
+
+		// If city isn't in cache, fetch it + add to localstorage
+    if (this.isValidQuery) {
+  		let apikey = 'APPID=b2139d07e99d08bc22c314f37e836e7d'
   		let api = 'http://api.openweathermap.org/data/2.5/forecast/daily?'
-  		let url = `${api}&q=${this.state.city},US&units=imperial&${key}`
+  		let url = `${api}&q=${this.state.city},US&units=imperial&${apikey}`
   	  fetch(url)
   	  .then(result => result.json())
   	  .then((data) => {
@@ -32,6 +46,7 @@ export default class Forecast extends Component {
       		loading: false,
       		results: data.list
       	})
+      	localStorage.setItem(this.state.city, JSON.stringify(this.state.results))
       	this.clearInput()
   	  })
   	  .catch(err => new Error(console.log('Hit a snag: ' + err)))
