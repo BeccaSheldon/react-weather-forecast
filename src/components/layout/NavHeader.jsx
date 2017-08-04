@@ -12,7 +12,7 @@ export default class NavHeader extends Component {
 							className="pulse"
 							target="_blank"
 							text="Source"
-							url="http://github.com/beccasheldon/vanilla-search-ui"
+							url="http://github.com/beccasheldon/react-weather-forecast"
 						></Link>
 					</li>
 				</ul>

@@ -35,13 +35,6 @@ export default class NavFooter extends Component {
 							url="http://github.com/beccasheldon"
 						/>
 					</li>
-					<li>
-						<Link
-							className="pulse"
-							text="Email"
-							url="mailto:rebecca.e.sheldon@gmail.com"
-						></Link>
-					</li>
 				</ul>
 			</Row>
 		)
