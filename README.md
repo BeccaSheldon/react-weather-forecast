@@ -1,4 +1,4 @@
-This is a little app that gets a weekly weather forecast for a user-entered city, using the [](OpenWeather API).
+This is a little app that gets a weekly weather forecast for a user-entered city, using the [OpenWeather API](http://openweathermap.org/api).
 
 ## Intention:
 - Set up a React app environment - using Webpack 3, Babel, and React.
