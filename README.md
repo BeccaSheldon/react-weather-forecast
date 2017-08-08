@@ -2,7 +2,7 @@ This is a little app that gets a weekly weather forecast for a user-entered city
 
 ## Intention:
 - Set up a React app environment - using Webpack 3, Babel, and React.
-- Pass state and props betweem components (this is very different from Vue - still getting the hang of it).
+- Pass state and props between components (this is very different from Vue - still getting the hang of it).
 - Compose higher-order components (see [api notes section](#api-notes)).
 - Set up SVG's as components, then reuse in different places (the current weather area + weather forecast table).
 - Animate SVG components
