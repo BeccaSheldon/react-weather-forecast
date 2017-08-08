@@ -13,7 +13,7 @@ export default class IconFinder extends Component {
 			if (this.props.icon === '03n' || this.props.icon === '04n' || this.props.icon === '03d') {
 				return <VeryCloudyIcon />
 			}
-			if (this.props.icon === '10n' || this.props.icon === '10d') {
+			if (this.props.icon === '10n' || this.props.icon === '10d' || this.props.icon === '50d') {
 				return <RainyIcon />
 			}
 			if (this.props.icon === '01n' || this.props.icon === '02d')  {
